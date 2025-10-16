@@ -7,16 +7,28 @@
   
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <script type="importmap">
-  {
-    "imports": {
-      "react": "https://aistudiocdn.com/react@^19.2.0",
-      "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-      "react/": "https://aistudiocdn.com/react@^19.2.0/",
-      "@google/genai": "https://aistudiocdn.com/@google/genai@^1.25.0"
-    }
-  }
-  </script>
+  <script>
+async function sendMessage(userText) {
+    const response = await fetch('/.netlify/functions/generate', {
+        method: 'POST',
+        body: JSON.stringify({ prompt: userText })
+    });
+
+    const data = await response.json();
+    console.log(data); // This will show the AI response
+
+    // Example: display response in chat
+    const botReply = data?.candidates?.[0]?.output?.[0]?.content?.[0]?.text || "No response";
+    document.getElementById("chatBox").innerText += "\nBot: " + botReply;
+}
+
+// Example: call sendMessage when user clicks send
+document.getElementById("sendBtn").addEventListener("click", () => {
+    const userText = document.getElementById("userInput").value;
+    sendMessage(userText);
+});
+</script>
+
   
   <style>
     :root {
