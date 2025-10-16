@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RIYAD AI BOT 2.0</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://aistudiocdn.com/react@^19.2.0",
+      "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+      "react/": "https://aistudiocdn.com/react@^19.2.0/",
+      "@google/genai": "https://aistudiocdn.com/@google/genai@^1.25.0"
+    }
+  }
+  </script>
+  
+  <style>
+    :root {
+      /* Default Dark Theme */
+      --bg-primary: #1E293B; /* slate-800 */
+      --bg-secondary: #0F172A; /* slate-900 */
+      --bg-tertiary: #334155; /* slate-700 */
+      --text-primary: #F1F5F9; /* slate-100 */
+      --text-secondary: #94A3B8; /* slate-400 */
+      --text-accent: #818CF8; /* indigo-400 */
+      --border-primary: #475569; /* slate-600 */
+      --accent-gradient-from: #4F46E5; /* indigo-600 */
+      --accent-gradient-to: #7C3AED; /* violet-600 */
+    }
+
+    .theme-light {
+      --bg-primary: #F1F5F9; /* slate-100 */
+      --bg-secondary: #FFFFFF; /* white */
+      --bg-tertiary: #E2E8F0; /* slate-200 */
+      --text-primary: #1E293B; /* slate-800 */
+      --text-secondary: #64748B; /* slate-500 */
+      --text-accent: #4F46E5; /* indigo-600 */
+      --border-primary: #CBD5E1; /* slate-300 */
+      --accent-gradient-from: #6366F1; /* indigo-500 */
+      --accent-gradient-to: #8B5CF6; /* violet-500 */
+    }
+
+    .theme-ocean {
+      --bg-primary: #0C4A6E; /* sky-900 */
+      --bg-secondary: #082F49; /* sky-950 */
+      --bg-tertiary: #075985; /* sky-800 */
+      --text-primary: #E0F2FE; /* sky-100 */
+      --text-secondary: #7DD3FC; /* sky-300 */
+      --text-accent: #38BDF8; /* sky-400 */
+      --border-primary: #38BDF8; /* sky-400 */
+      --accent-gradient-from: #0EA5E9; /* sky-500 */
+      --accent-gradient-to: #22D3EE; /* cyan-400 */
+    }
+
+    .theme-anime {
+      --bg-primary: rgba(20, 20, 40, 0.8);
+      --bg-secondary: rgba(10, 10, 25, 0.85);
+      --bg-tertiary: rgba(40, 40, 60, 0.8);
+      --text-primary: #FADADD; /* Sakura Pink */
+      --text-secondary: #B1E1FF; /* Sky Blue */
+      --text-accent: #F9A8D4; /* Lighter Pink */
+      --border-primary: #F9A8D4;
+      --accent-gradient-from: #EC4899; /* Hot Pink */
+      --accent-gradient-to: #D946EF; /* Fuchsia */
+    }
+    
+    .theme-anime-bg {
+       background-image: url('https://i.pinimg.com/originals/b7/2e/6c/b72e6c1e3a22537f2c2ca7f714c2a5e9.gif');
+       background-size: cover;
+       background-position: center;
+       background-repeat: no-repeat;
+       background-attachment: fixed;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.3s ease-out forwards;
+    }
+
+    .animate-fade-in-up {
+        animation: fadeInUp 0.4s ease-out forwards;
+    }
+
+    /* Custom scrollbar for better aesthetics */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--bg-tertiary);
+        border-radius: 10px;
+        border: 2px solid var(--bg-primary);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--border-primary);
+    }
+
+  </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
